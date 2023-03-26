@@ -92,6 +92,7 @@
 (require 'basics)
 (require 'keys)
 (require 'completions)
+(require 'git)
 
 ;; after started up, reset GC threshold to normal.
 (run-with-idle-timer 4 nil
