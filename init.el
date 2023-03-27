@@ -97,6 +97,15 @@
 (require 'tree-sitter)
 (require 'ui)
 
+
+(elpaca-wait)
+
+;; after that some last settings
+(general-define-key
+:keymaps 'meow-normal-state-keymap
+"/" my/search-map
+)
+
 ;; after started up, reset GC threshold to normal.
 (run-with-idle-timer 4 nil
                      (lambda ()

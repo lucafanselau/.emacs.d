@@ -28,6 +28,7 @@
     :prefix "C-c s"
     :prefix-map 'my/search-map)
 
+
 (general-create-definer my/toggle-map
     :prefix "C-c t"
     :prefix-map 'my/toggle-map)

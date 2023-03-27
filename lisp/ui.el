@@ -92,7 +92,7 @@ if they are side window.")
                            tab-bar-separator))
 
     (general-create-definer my/tab-map
-        :prefix "C-c t"
+        :prefix "C-c TAB"
         :prefix-map 'my/tab-map)
 
     (my/tab-map
