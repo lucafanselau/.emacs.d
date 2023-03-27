@@ -86,13 +86,16 @@
 ;; Block until current queue processed.
 (elpaca-wait)
 
-
 ;; Here the actual config starts
 (require 'utils)
 (require 'basics)
 (require 'keys)
 (require 'completions)
 (require 'git)
+(require 'manager)
+(require 'theme)
+(require 'tree-sitter)
+(require 'ui)
 
 ;; after started up, reset GC threshold to normal.
 (run-with-idle-timer 4 nil

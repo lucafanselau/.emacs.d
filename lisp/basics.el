@@ -1,7 +1,7 @@
 ;;; my-basics.el -*- lexical-binding: t; -*-
 
-(setq user-full-name "Milan Glacier")
-(setq user-mail-address "me@milanglacier.com")
+(setq user-full-name "Luca Fanselau")
+(setq user-mail-address "luca.fanselau@outlook.com")
 
 (setq mac-right-option-modifier 'meta)
 (setq mac-option-modifier 'meta)
@@ -31,6 +31,12 @@
 (setq scroll-step 1
       scroll-conservatively 10000
       auto-window-vscroll nil)
+
+
+;; Smooth scrolling
+(setq pixel-scroll-precision-use-momentum t)
+(pixel-scroll-precision-mode)
+
 
 (provide 'basics)
 ;;; my-basics ends here
