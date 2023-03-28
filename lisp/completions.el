@@ -20,6 +20,7 @@
 
   )
 
+
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
   :elpaca nil
@@ -212,6 +213,7 @@
 ;; And here we go with corfu
 
 (use-package corfu
+:elpaca (:files (:defaults "extensions/*"))
   ;; Optional customizations
   :custom
   (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
@@ -232,8 +234,34 @@
   ;; Recommended: Enable Corfu globally.
   ;; This is recommended since Dabbrev can be used globally (M-/).
   ;; See also `corfu-excluded-modes'.
+ :bind (:map corfu-map
+	            ("C-j" . #'corfu-next)
+              ("C-k" . #'corfu-previous)
+              ("<escape>" . #'corfu-quit)
+	            ("<return>" . #'corfu-insert)
+	            ("M-d" . #'corfu-info-documentation)
+		    ("M-l" . #'corfu-info-location)
+		    ("M-t" . #'corfu-popupinfo-toggle)
+              ("M-n" . #'corfu-popupinfo-scroll-up)
+              ("M-p" . #'corfu-popupinfo-scroll-down))
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  )
+
+  (use-package corfu-popupinfo
+  :elpaca nil
+  :after corfu
+:custom
+  (corfu-popupinfo-delay (cons 1.0 t))
+  :hook (corfu-mode . corfu-popupinfo-mode))
+
+(use-package kind-icon
+  :ensure t
+  :after corfu
+  :custom
+  (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 ;; A few more useful configurations...
 (use-package emacs

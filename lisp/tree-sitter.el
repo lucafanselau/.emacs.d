@@ -6,6 +6,7 @@
   :mode ((".*\\.ts\\'" . typescript-ts-mode)
 	 (".*\\.tsx\\'" . tsx-ts-mode)))
 
+(require 'treesit-meow)
 
 ;; basic elisp stuff
 (use-package elisp
