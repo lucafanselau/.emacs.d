@@ -7,6 +7,7 @@
 (setq mac-option-modifier 'meta)
 
 (setq warning-minimum-level :error)
+(setq ring-bell-function 'ignore)
 
 (setq initial-major-mode 'fundamental-mode)
 

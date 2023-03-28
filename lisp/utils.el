@@ -5,7 +5,10 @@
   :ensure t
   :config
   (general-auto-unbind-keys)
-)
+  )
+
+(use-package dash
+  :ensure t)
 
 (elpaca-wait)
 
@@ -24,6 +27,10 @@
     :prefix "C-c o"
     :prefix-map 'my/open-map)
 
+(general-create-definer my/code-map
+  :prefix "C-c c"
+  :prefix-map 'my/code-map)
+
 (general-create-definer my/search-map
     :prefix "C-c s"
     :prefix-map 'my/search-map)
@@ -32,6 +39,10 @@
 (general-create-definer my/toggle-map
     :prefix "C-c t"
     :prefix-map 'my/toggle-map)
+
+(general-create-definer my/buffer-map
+    :prefix "C-c b"
+    :prefix-map 'my/buffer-map)
 
 (provide 'utils)
 ;;; utils.el ends here

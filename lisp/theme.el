@@ -15,6 +15,9 @@
   :config
   (sml/setup))
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 (elpaca-wait)
 
 (defun my/apply-theme (appearance)

@@ -2,17 +2,19 @@
 
 
 (use-package project
-:elpaca nil
-:init
-(general-define-key
- "C-c p" project-prefix-map)
-(general-define-key
- :prefix "C-c"
- "," 'project-find-file
- "." 'consult-project-buffer
- "/" 'consult-find
- )
-)
+  :elpaca nil
+  :init
+  (general-define-key
+   "C-c p" project-prefix-map)
+  (general-define-key
+   :prefix "C-c"
+   "SPC" 'project-find-file
+   "," 'consult-project-buffer
+   "<" 'consult-buffer
+   "." 'find-file
+   "/" 'consult-grep
+   )
+  )
 
 
 ;; File map

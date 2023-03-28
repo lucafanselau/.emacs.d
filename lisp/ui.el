@@ -22,12 +22,13 @@
     (global-display-line-numbers-mode)
     )
 
-(use-package whitespace
-:elpaca nil
-    :init
-    (setq whitespace-style '(face tabs tab-mark trailing))
-    (global-whitespace-mode)
-    )
+;; (use-package whitespace
+;; :elpaca nil
+;;     :init
+    
+;;     ;;(setq whitespace-style '(face tabs tab-mark trailing))
+;;     (global-whitespace-mode)
+;;     )
 
 (defvar my/side-window-slots
     '((helpful . 1) ;; 0 is the default
@@ -71,14 +72,14 @@ if they are side window.")
 
 (blink-cursor-mode -1)
 
-(use-package all-the-icons
-    :if (display-graphic-p)
-    :commands (all-the-icons-octicon
-               all-the-icons-faicon
-               all-the-icons-fileicon
-               all-the-icons-wicon
-               all-the-icons-material
-               all-the-icons-alltheicon))
+;; (use-package all-the-icons
+;;     :if (display-graphic-p)
+;;     :commands (all-the-icons-octicon
+;;                all-the-icons-faicon
+;;                all-the-icons-fileicon
+;;                all-the-icons-wicon
+;;                all-the-icons-material
+;;                all-the-icons-alltheicon))
 
 (use-package tab-bar
 :elpaca nil
