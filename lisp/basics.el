@@ -38,6 +38,12 @@
 (setq pixel-scroll-precision-use-momentum t)
 (pixel-scroll-precision-mode)
 
+;; Load env path
+(use-package exec-path-from-shell
+  :ensure t
+  :init
+  (when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize)))
 
 (provide 'basics)
 ;;; my-basics ends here

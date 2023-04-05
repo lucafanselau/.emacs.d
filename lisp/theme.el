@@ -1,22 +1,169 @@
 
-(use-package atom-one-dark-theme
-:ensure t
-)
+(use-package atom-one-dark-theme :ensure t)
 
-(use-package smart-mode-line-atom-one-dark-theme
- :ensure t)
-(use-package smart-mode-line
-:ensure t
-:defer 0.2
-  :init
-  (setq sml/no-confirm-load-theme t)
-  (setq sml/theme 'atom-one-dark)
-  (message "Hello")
-  :config
-  (sml/setup))
+(use-package
+ ligature
+ :config
+ ;; Enable the "www" ligature in every possible major mode
+ (ligature-set-ligatures 't '("www"))
+ ;; Enable traditional ligature support in eww-mode, if the
+ ;; `variable-pitch' face supports it
+ (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+ ;; Enable all Cascadia Code ligatures in programming modes
+ (ligature-set-ligatures
+  'prog-mode
+  '("|||>"
+    "<|||"
+    "<==>"
+    "<!--"
+    "####"
+    "~~>"
+    "***"
+    "||="
+    "||>"
+    ":::"
+    "::="
+    "=:="
+    "==="
+    "==>"
+    "=!="
+    "=>>"
+    "=<<"
+    "=/="
+    "!=="
+    "!!."
+    ">=>"
+    ">>="
+    ">>>"
+    ">>-"
+    ">->"
+    "->>"
+    "-->"
+    "---"
+    "-<<"
+    "<~~"
+    "<~>"
+    "<*>"
+    "<||"
+    "<|>"
+    "<$>"
+    "<=="
+    "<=>"
+    "<=<"
+    "<->"
+    "<--"
+    "<-<"
+    "<<="
+    "<<-"
+    "<<<"
+    "<+>"
+    "</>"
+    "###"
+    "#_("
+    "..<"
+    "..."
+    "+++"
+    "/=="
+    "///"
+    "_|_"
+    "www"
+    "&&"
+    "^="
+    "~~"
+    "~@"
+    "~="
+    "~>"
+    "~-"
+    "**"
+    "*>"
+    "*/"
+    "||"
+    "|}"
+    "|]"
+    "|="
+    "|>"
+    "|-"
+    "{|"
+    "[|"
+    "]#"
+    "::"
+    ":="
+    ":>"
+    ":<"
+    "$>"
+    "=="
+    "=>"
+    "!="
+    "!!"
+    ">:"
+    ">="
+    ">>"
+    ">-"
+    "-~"
+    "-|"
+    "->"
+    "--"
+    "-<"
+    "<~"
+    "<*"
+    "<|"
+    "<:"
+    "<$"
+    "<="
+    "<>"
+    "<-"
+    "<<"
+    "<+"
+    "</"
+    "#{"
+    "#["
+    "#:"
+    "#="
+    "#!"
+    "##"
+    "#("
+    "#?"
+    "#_"
+    "%%"
+    ".="
+    ".-"
+    ".."
+    ".?"
+    "+>"
+    "++"
+    "?:"
+    "?="
+    "?."
+    "??"
+    ";;"
+    "/*"
+    "/="
+    "/>"
+    "//"
+    "__"
+    "~~"
+    "(*"
+    "*)"
+    "\\\\"
+    "://"))
+ ;; Enables ligature checks globally in all buffers. You can also do it
+ ;; per mode with `ligature-mode'.
+ (global-ligature-mode t))
 
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
+(use-package smart-mode-line-atom-one-dark-theme :ensure t)
+(use-package
+ smart-mode-line
+ :ensure t
+ :defer 0.2
+ :init
+ (setq sml/no-confirm-load-theme t)
+ (setq sml/theme 'atom-one-dark)
+ (message "Hello")
+ :config (sml/setup))
+
+(use-package
+ rainbow-delimiters
+ :hook (prog-mode . rainbow-delimiters-mode))
 
 (elpaca-wait)
 
