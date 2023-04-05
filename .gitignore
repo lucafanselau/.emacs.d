@@ -5,3 +5,6 @@ eln-cache
 tutorial
 /.DS_Store
 /projects
+/.cache/
+/elisp-autofmt-cache/
+/elpa/
