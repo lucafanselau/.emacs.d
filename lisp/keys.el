@@ -89,6 +89,21 @@
 
  (require 'meow) (meow-setup) (meow-global-mode 1))
 
+(defun my/meow-define-keys (state mode &rest keybinds)
+  "Wrapper around meow-define-keys which only defines a keybind for a specific mode"
+  (let (modified-keybinds)
+    (pcase-dolist (`(,key . ,fun) keybinds)
+      (push (cons
+             key
+             `(lambda ()
+                (interactive)
+                (call-interactively
+                 (if (eq major-mode ',mode)
+                     #',fun
+                   (key-binding ,key)))))
+            modified-keybinds))
+    (apply 'meow-define-keys state modified-keybinds)))
+
 ;; Use puni-mode globally and disable it for term-mode.
 ;; (use-package
 ;;  puni

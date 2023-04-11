@@ -4,6 +4,14 @@
 (setq gc-cons-percentage 0.6)
 (setq gc-cons-threshold most-positive-fixnum)
 
+;; font config
+(cond
+ ((font-exists-p "MonoLisa")
+  (set-frame-font "MonoLisa:spacing=100:size=18" nil t))
+ ((font-exists-p "Cascadia Mono")
+  (set-face-attribute 'default nil
+                      :font "Cascadia Code"
+                      :height 160)))
 
 ;; global config
 

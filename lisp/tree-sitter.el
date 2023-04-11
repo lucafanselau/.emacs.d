@@ -6,7 +6,8 @@
  :mode
  ((".*\\.ts\\'" . typescript-ts-mode)
   (".*\\.tsx\\'" . tsx-ts-mode)
-  (".*\\.json\\'" . json-ts-mode)))
+  (".*\\.json\\'" . json-ts-mode)
+  (".*\\.py\\'" . python-ts-mode)))
 
 (require 'treesit-meow)
 
@@ -21,8 +22,8 @@
  eglot
  :elpaca nil
  ;; register all languages where the we want lsp services
- :hook (typescript-ts-base-mode . eglot-ensure)
- :config
+ :hook ((typescript-ts-base-mode python-ts-mode) . eglot-ensure)
+ :config (setq eglot-confirm-server-initiated-edits nil)
  (my/code-map
   "c"
   #'comment-region

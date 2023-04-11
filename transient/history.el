@@ -5,5 +5,6 @@
  (magit-merge nil)
  (magit-pull nil)
  (magit-push nil)
+ (magit-remote.<remote>.*url "https://github.com/lfanselau/mpms.git" "https://github.com/lfanselau/plc-security.git")
  (magit-revert
   ("--edit")))

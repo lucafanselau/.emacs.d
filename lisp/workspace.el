@@ -51,4 +51,20 @@
  ((tab-bar-mode . bufler-tabs-mode) (after-init-hook . bufler-mode))
  :init (my/buffer-map "l" 'bufler))
 
+;; (use-package
+;;  project-x
+;;  :after project
+;;  :config
+;;  (setq project-x-save-interval 600) ;Save project state every 10 min
+;;  (setq project-x-local-identifier
+;;        '("package.json" "mix.exs" "Project.toml" ".project"))
+;;  (project-x-mode 1))
+
+
+(use-package
+ project-rootfile
+ :after project
+ :init
+ (add-to-list 'project-find-functions #'project-rootfile-try-detect))
+
 (provide 'workspace)

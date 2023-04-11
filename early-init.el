@@ -2,6 +2,11 @@
 
 (setq package-enable-at-startup nil)
 
+(defun font-exists-p (font)
+  (if (null (x-list-fonts font))
+      nil
+    t))
+
 
 ;; increase gc threshold to speedup starting up
 (setq gc-cons-percentage 0.6)

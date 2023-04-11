@@ -11,6 +11,16 @@
  :mode
  (("\\.md\\'" . markdown-mode) ("\\.markdown\\'" . markdown-mode)))
 
+;; python
+
+(use-package
+ pipenv
+ :hook ((python-mode python-ts-mode) . pipenv-mode)
+ :init
+ (setq pipenv-with-flycheck nil)
+ (setq pipenv-with-projectile nil))
+
+
 ;; Typescript
 (defun setup-typescript ()
   (require 'treesit-meow)

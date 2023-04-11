@@ -8,7 +8,7 @@
 ;; see discussion here: URL `https://emacs.stackexchange.com/questions/54817/remove-dollar-sign-at-beginning-of-line'
 
 ;; set default font
-(add-to-list 'default-frame-alist '(font . "MonoLisa"))
+;; (add-to-list 'default-frame-alist '(font . "JetBrains Mono"))
 
 ;; Set font for text that should be displayed more like prose.
 (set-face-attribute 'variable-pitch nil

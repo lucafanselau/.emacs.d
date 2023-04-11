@@ -54,5 +54,7 @@
 (my/buffer-map
  "r" 'revert-buffer "k" 'kill-this-buffer "K" 'kill-buffer)
 
+(my/toggle-map "w" 'toggle-truncate-lines)
+
 (provide 'utils)
 ;;; utils.el ends here
