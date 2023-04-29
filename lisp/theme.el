@@ -158,7 +158,6 @@
  :init
  (setq sml/no-confirm-load-theme t)
  (setq sml/theme 'atom-one-dark)
- (message "Hello")
  :config (sml/setup))
 
 (use-package

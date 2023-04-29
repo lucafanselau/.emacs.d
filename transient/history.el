@@ -1,10 +1,18 @@
 ((magit-branch nil)
  (magit-commit nil)
  (magit-dispatch nil)
+ (magit-fetch nil)
  (magit-gitignore nil)
+ (magit-log
+  (("--" "client/src/dashboard/security-item.tsx")))
  (magit-merge nil)
- (magit-pull nil)
+ (magit-pull
+  ("--rebase"))
  (magit-push nil)
- (magit-remote.<remote>.*url "https://github.com/lfanselau/mpms.git" "https://github.com/lfanselau/plc-security.git")
+ (magit-rebase nil)
+ (magit-remote
+  ("-f"))
+ (magit-remote.<remote>.*url "git@work:lfanselau/mpms.git" "git@work/lfanselau/mpms.git" "https://github.com/lfanselau/mpms.git" "https://github.com/lfanselau/plc-security.git")
  (magit-revert
-  ("--edit")))
+  ("--edit"))
+ (magit-stash nil))

@@ -262,7 +262,6 @@
  corfu-popupinfo
  :elpaca nil
  :after corfu
- :custom (corfu-popupinfo-delay (cons 1.0 t))
  :hook (corfu-mode . corfu-popupinfo-mode))
 
 (use-package

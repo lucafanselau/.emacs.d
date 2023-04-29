@@ -12,10 +12,18 @@
  (("\\.md\\'" . markdown-mode) ("\\.markdown\\'" . markdown-mode)))
 
 ;; python
+(use-package
+ python
+ :elpaca nil
+ :config
+ (general-define-key
+  :keymaps '(python-mode-map python-ts-mode-map) "C-c" nil))
 
 (use-package
  pipenv
- :hook ((python-mode python-ts-mode) . pipenv-mode)
+ :hook
+ (((python-mode python-ts-mode) . pipenv-mode)
+  ((python-mode python-ts-mode) . pipenv-activate))
  :init
  (setq pipenv-with-flycheck nil)
  (setq pipenv-with-projectile nil))

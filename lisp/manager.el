@@ -17,7 +17,7 @@
   "."
   'find-file
   "/"
-  'consult-grep))
+  'consult-ripgrep))
 
 
 ;; File map

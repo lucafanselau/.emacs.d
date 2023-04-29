@@ -8,10 +8,13 @@
 (cond
  ((font-exists-p "MonoLisa")
   (set-frame-font "MonoLisa:spacing=100:size=18" nil t))
+
  ((font-exists-p "Cascadia Mono")
+  (set-face-attribute 'default nil :font "Cascadia Code" :height 160))
+ ((font-exists-p "JetBrains Mono")
   (set-face-attribute 'default nil
-                      :font "Cascadia Code"
-                      :height 160)))
+                      :font "JetBrains Mono"
+                      :height 120)))
 
 ;; global config
 
@@ -129,7 +132,8 @@
  ;; know its source code has changed. This avoids the overhead of
  ;; the check. Make sure you know what you are doing here when
  ;; setting this option.
- debug-on-error t)
+ )
+;;debug-on-error t)
 
 ;; Install use-package support
 (elpaca
@@ -157,9 +161,10 @@
 (require 'langs)
 (require 'term)
 (require 'spell)
-
+(require 'fwm)
 
 (elpaca-wait)
+
 
 ;; after that some last settings
 (general-define-key
