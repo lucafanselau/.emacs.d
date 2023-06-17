@@ -4,7 +4,7 @@
 
  :init (my/open-map "t" #'my/vterm "s" #'my/run-scripts)
 
- :config
+ :config (setq vterm-term-environment-variable "eterm-color")
 
  (setq vterm-max-scrollback 5000)
 
@@ -23,5 +23,11 @@
  (add-hook 'vterm-mode-hook (my/setq-locally hscroll-margin 0))
  (add-hook
   'vterm-mode-hook (my/turn-off-mode display-line-numbers-mode)))
+
+
+(use-package
+ eterm-256color
+ :ensure t
+ :config (add-hook 'vterm-mode-hook #'eterm-256color-mode))
 
 (provide 'term)
