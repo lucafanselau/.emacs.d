@@ -12,4 +12,18 @@
   ("C-TAB" . 'copilot-accept-completion-by-word)
   ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
+
+;; writing assistance
+
+(use-package
+ eglot-grammarly
+ :elpaca (:host github :repo "emacs-grammarly/eglot-grammarly")
+ :defer t ; defer package loading
+ :hook
+ ((text-mode markdown-mode)
+  .
+  (lambda ()
+    (require 'eglot-grammarly)
+    (eglot-ensure))))
+
 (provide 'fwm)
