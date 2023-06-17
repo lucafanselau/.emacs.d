@@ -3,11 +3,21 @@
  treesit
  :elpaca nil
  :init (setq treesit-extra-load-path '("~/.emacs.d/grammar"))
+ :config
+ (add-to-list
+  'treesit-language-source-alist
+  '(zig "https://github.com/maxxnino/tree-sitter-zig"))
  :mode
  ((".*\\.ts\\'" . typescript-ts-mode)
   (".*\\.tsx\\'" . tsx-ts-mode)
   (".*\\.json\\'" . json-ts-mode)
+  (".*\\.rs\\'" . rust-ts-mode)
   (".*\\.py\\'" . python-ts-mode)))
+
+(use-package
+ treesit-auto
+ :config (global-treesit-auto-mode)
+ :demand t)
 
 (require 'treesit-meow)
 
@@ -22,7 +32,10 @@
  eglot
  :elpaca nil
  ;; register all languages where the we want lsp services
- :hook ((typescript-ts-base-mode python-ts-mode) . eglot-ensure)
+ :hook
+ ((typescript-ts-base-mode python-ts-mode rust-ts-mode)
+  .
+  eglot-ensure)
  :config (setq eglot-confirm-server-initiated-edits nil)
  (my/code-map
   "c"
@@ -124,6 +137,8 @@
  apheleia
  :init (apheleia-global-mode +1)
  :config
+ (setf (alist-get 'rustfmt apheleia-formatters)
+       '("cargo" "fmt" "--" "--quiet" "--emit" "stdout"))
  (setf (alist-get 'json-js-mode apheleia-mode-alist) 'prettier-json)
  (my/buffer-map "f" :wk "format buffer" 'apheleia-format-buffer))
 

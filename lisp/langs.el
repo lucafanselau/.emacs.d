@@ -99,4 +99,6 @@
        :includeInlayEnumMemberValueHints t)))))
 (add-hook 'typescript-ts-base-mode-hook #'setup-typescript)
 
+(use-package zig-mode :mode "\\.zig\\'")
+
 (provide 'langs)

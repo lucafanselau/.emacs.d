@@ -75,7 +75,7 @@
     '("s" . meow-kill)
     '("t" . meow-till)
     '("u" . meow-undo)
-    '("U" . meow-undo-in-selection)
+    '("U" . undo-redo)
     '("v" . meow-visit)
     '("w" . meow-mark-word)
     '("W" . meow-mark-symbol)
@@ -85,6 +85,8 @@
     '("Y" . meow-sync-grab)
     '("z" . meow-pop-selection)
     '("'" . repeat)
+    '("C-d" . meow-page-down)
+    '("C-u" . meow-page-up)
     '("<escape>" . ignore)))
 
  (require 'meow) (meow-setup) (meow-global-mode 1))
@@ -103,6 +105,13 @@
                    (key-binding ,key)))))
             modified-keybinds))
     (apply 'meow-define-keys state modified-keybinds)))
+
+(use-package paredit :hook (prog-mode . enable-paredit-mode))
+
+(use-package
+ vundo
+ :config
+ (my/meow-define-keys 'normal 'prog-mode "C-c C-u" 'vundo))
 
 ;; Use puni-mode globally and disable it for term-mode.
 ;; (use-package

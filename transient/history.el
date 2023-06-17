@@ -6,8 +6,8 @@
  (magit-log
   (("--" "client/src/dashboard/security-item.tsx")))
  (magit-merge nil)
- (magit-pull
-  ("--rebase"))
+ (magit-pull nil
+	     ("--rebase"))
  (magit-push nil)
  (magit-rebase nil)
  (magit-remote

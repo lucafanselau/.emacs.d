@@ -164,6 +164,8 @@
  rainbow-delimiters
  :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package hl-todo :hook (prog-mode . hl-todo-mode))
+
 (elpaca-wait)
 
 (defun my/apply-theme (appearance)

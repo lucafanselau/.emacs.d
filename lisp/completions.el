@@ -59,7 +59,9 @@
  (setq
   completion-styles '(orderless basic)
   completion-category-defaults nil
-  completion-category-overrides '((file (styles partial-completion)))))
+  completion-category-overrides '((file (styles partial-completion)))
+  ;; personal preference (no cycling at all)
+  completion-cycle-threshold nil))
 
 ;; Example configuration for Consult
 (use-package
