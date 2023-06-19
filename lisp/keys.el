@@ -106,7 +106,7 @@
             modified-keybinds))
     (apply 'meow-define-keys state modified-keybinds)))
 
-(use-package paredit :hook (prog-mode . enable-paredit-mode))
+;; (use-package paredit :hook (prog-mode . enable-paredit-mode))
 
 (use-package
  vundo
