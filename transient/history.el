@@ -6,6 +6,7 @@
  (magit-pull nil
 	     ("--rebase"))
  (magit-push nil)
+ (magit-rebase nil)
  (magit-revert
   ("--edit"))
  (magit-stash nil))

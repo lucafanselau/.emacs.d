@@ -17,7 +17,9 @@
   "."
   'find-file
   "/"
-  'consult-ripgrep))
+  'consult-ripgrep
+  ":"
+  'execute-extended-command))
 
 
 ;; File map
@@ -29,7 +31,7 @@
 (my/file-map
  "s" 'save-buffer "f" 'project-find-file
  ;; TODO Do more of this
- )
+ "r" 'rename-visited-file)
 
 ;; Window map
 (general-create-definer
@@ -49,7 +51,9 @@
  "u"
  'winner-undo
  "r"
- 'winner-redo)
+ 'winner-redo
+ "W"
+ 'other-window)
 
 (use-package
  ace-window
