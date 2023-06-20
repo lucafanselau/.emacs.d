@@ -59,6 +59,13 @@
  ace-window
  :init (setq aw-dispatch-always t) (my/window-map "w" 'ace-window))
 
+;; Frame map
+(general-create-definer
+ my/frame-map
+ :prefix "C-c F"
+ :prefix-map 'my/frame-map)
+
+
 ;; Quit map
 
 (general-create-definer
