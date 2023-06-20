@@ -196,7 +196,7 @@
     ('light (load-theme 'tango t))
     ('dark (load-theme 'atom-one-dark t))))
 
-(add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
+;;(add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
 ;; always start with dark
 ;;(my/apply-theme 'dark)
 

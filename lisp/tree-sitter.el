@@ -138,7 +138,7 @@
  :init (apheleia-global-mode +1)
  :config
  (setf (alist-get 'rustfmt apheleia-formatters)
-       '("cargo" "fmt" "--" "--quiet" "--emit" "stdout"))
+       '("rustfmt" "--quiet" "--emit" "stdout" "--edition" "2018"))
  (setf (alist-get 'json-js-mode apheleia-mode-alist) 'prettier-json)
  (my/buffer-map "f" :wk "format buffer" 'apheleia-format-buffer))
 
