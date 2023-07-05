@@ -329,6 +329,8 @@
  ;; `completion-at-point' is often bound to M-TAB.
  (setq tab-always-indent 'complete) (setq tab-width 2))
 
+(setq-default tab-width 2)
+
 ;; Add extensions
 (use-package
  cape

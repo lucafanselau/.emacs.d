@@ -7,7 +7,7 @@
 ;; font config
 (cond
  ((font-exists-p "MonoLisa")
-  (set-frame-font "MonoLisa:spacing=100:size=13" nil t))
+  (set-frame-font "MonoLisa:spacing=100:size=18:weight=bold" nil t))
 
  ((font-exists-p "Cascadia Mono")
   (set-face-attribute 'default nil :font "Cascadia Code" :height 160))
@@ -15,6 +15,7 @@
   (set-face-attribute 'default nil
                       :font "JetBrains Mono"
                       :height 120)))
+
 
 ;; global config
 

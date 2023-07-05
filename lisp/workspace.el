@@ -51,6 +51,11 @@
  ((tab-bar-mode . bufler-tabs-mode) (after-init-hook . bufler-mode))
  :init (my/buffer-map "l" 'bufler))
 
+(require 'uniquify)
+(setq
+ uniquify-buffer-name-style 'forward
+ uniquify-min-dir-content 2)
+
 ;; (use-package
 ;;  project-x
 ;;  :after project

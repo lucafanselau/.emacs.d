@@ -13,3 +13,4 @@ grammar/*
 history
 /tree-sitter/*.so
 /transient/history.el
+/emojis/

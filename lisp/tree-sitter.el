@@ -42,6 +42,8 @@
   #'comment-region
   "a"
   #'eglot-code-actions
+  "h"
+  #'eglot-inlay-hints-mode
   "f"
   #'eglot-format
   "d"

@@ -1,5 +1,7 @@
 
-;;(use-package atom-one-dark-theme :ensure t)
+;; (use-package atom-one-dark-theme :ensure t)
+
+(use-package one-themes :init (load-theme 'one-dark t))
 
 (use-package
  doom-themes
@@ -10,7 +12,7 @@
  (setq
   doom-themes-enable-bold t ; if nil, bold is universally disabled
   doom-themes-enable-italic t) ; if nil, italics is universally disabled
- (load-theme 'doom-nord t)
+ ;; (load-theme 'doom-nord t)
 
  ;; Enable flashing mode-line on errors
  (doom-themes-visual-bell-config)
@@ -176,10 +178,10 @@
  smart-mode-line
  :ensure t
  :defer 0.2
- :init
- (setq sml/no-confirm-load-theme t)
+ :init (setq sml/no-confirm-load-theme t)
+ :config
  (setq sml/theme 'atom-one-dark)
- :config (sml/setup))
+ (sml/setup))
 
 (use-package
  rainbow-delimiters
