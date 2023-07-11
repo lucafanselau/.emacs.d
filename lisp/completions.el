@@ -67,7 +67,6 @@
 (use-package
  consult
  :ensure t
- :config (message "consult loaded")
 
  ;; Replace bindings. Lazily loaded due by `use-package'.
  ;; :bind (;; C-c bindings (mode-specific-map)
