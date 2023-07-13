@@ -163,6 +163,8 @@
 (require 'term)
 (require 'spell)
 (require 'fwm)
+(require 'undo)
+(require 'jupyter)
 
 (elpaca-wait)
 
