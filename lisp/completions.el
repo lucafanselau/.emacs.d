@@ -291,7 +291,7 @@
 
  ;; Enable indentation+completion using the TAB key.
  ;; `completion-at-point' is often bound to M-TAB.
- (setq tab-always-indent 'complete) (setq tab-width 2))
+ (setq tab-always-indent 'complete))
 
 ;; Add extensions
 (use-package

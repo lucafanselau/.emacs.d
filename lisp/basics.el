@@ -12,14 +12,16 @@
 (setq initial-major-mode 'fundamental-mode)
 
 (defconst IS-MAC (eq system-type 'darwin))
-(defconst IS-LINUX (memq system-type '(gnu gnu/linux gnu/kfreebsd berkeley-unix)))
+(defconst IS-LINUX
+  (memq system-type '(gnu gnu/linux gnu/kfreebsd berkeley-unix)))
 (defconst IS-WINDOWS (memq system-type '(cygwin windows-nt ms-dos)))
 
 ;; try to disable the auto backup behavior
 ;; as much as possible
-(setq make-backup-files nil
-      create-lockfiles nil
-      auto-save-default nil)
+(setq
+ make-backup-files nil
+ create-lockfiles nil
+ auto-save-default nil)
 
 ;; don't need to input yes or no
 ;; y or n is sufficient.
@@ -29,21 +31,24 @@
 ;; (setq-default indent-tabs-mode nil)
 
 ;; smooth scroll
-(setq scroll-step 1
-      scroll-conservatively 10000
-      auto-window-vscroll nil)
+(setq
+ scroll-step 1
+ scroll-conservatively 10000
+ auto-window-vscroll nil)
 
 
+(setq-default tab-width 2)
 ;; Smooth scrolling
 (setq pixel-scroll-precision-use-momentum t)
 (pixel-scroll-precision-mode)
 
 ;; Load env path
-(use-package exec-path-from-shell
-  :ensure t
-  :init
-  (when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize)))
+(use-package
+ exec-path-from-shell
+ :ensure t
+ :init
+ (when (memq window-system '(mac ns x))
+   (exec-path-from-shell-initialize)))
 
 (provide 'basics)
 ;;; my-basics ends here
