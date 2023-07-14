@@ -108,10 +108,11 @@
 
 ;; (use-package paredit :hook (prog-mode . enable-paredit-mode))
 
-(use-package
- vundo
- :config
- (my/meow-define-keys 'normal 'prog-mode "C-c C-u" 'vundo))
+
+;; (use-package
+;;  vundo
+;;  :config
+;;  (my/meow-define-keys 'normal 'prog-mode "C-c C-u" 'vundo))
 
 ;; Use puni-mode globally and disable it for term-mode.
 ;; (use-package

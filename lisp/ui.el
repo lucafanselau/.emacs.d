@@ -84,4 +84,18 @@ if they are side window.")
 ;;                all-the-icons-alltheicon))
 
 
+(use-package
+ frame-fns
+ :demand t
+ :elpaca (:host github :repo "emacsmirror/frame-fns"))
+(use-package
+ frame-cmds
+ :demand t
+ :elpaca (:host github :repo "emacsmirror/frame-cmds"))
+(use-package
+ zoom-frm.el
+ :demand t
+ :init (my/frame-map "z" 'zoom-in "Z" 'zoom-out)
+ :elpaca (:host "github" :repo "emacsmirror/zoom-frm"))
+
 (provide 'ui)

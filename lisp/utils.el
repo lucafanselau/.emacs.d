@@ -1,10 +1,13 @@
 ;;; utils.el -*- lexical-binding: t; -*-
 
 
+;; realy basic dependencies
+
 (use-package general :ensure t :config (general-auto-unbind-keys))
 
 (use-package dash :ensure t)
 (use-package f :ensure t :demand t)
+(use-package deferred :demand t)
 
 (elpaca-wait)
 
