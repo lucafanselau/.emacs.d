@@ -12,7 +12,9 @@
   copilot-completion-map
   ("C-<return>" . 'copilot-accept-completion)
   ("C-TAB" . 'copilot-accept-completion-by-word)
-  ("C-<tab>" . 'copilot-accept-completion-by-word)))
+  ("C-<tab>" . 'copilot-accept-completion-by-word)
+  ("C-n" . 'copilot-next-completion)
+  ("C-p" . 'copilot-previous-completion)))
 
 
 ;; writing assistance

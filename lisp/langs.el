@@ -9,7 +9,10 @@
 (use-package
  markdown-mode
  :mode
- (("\\.md\\'" . markdown-mode) ("\\.markdown\\'" . markdown-mode)))
+ (("\\.md\\'" . markdown-mode)
+  ("\\.markdown\\'" . markdown-mode)
+  ("\\.mdx\\'" . markdown-mode)))
+
 
 ;; python
 (use-package

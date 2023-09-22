@@ -12,7 +12,8 @@
   (".*\\.tsx\\'" . tsx-ts-mode)
   (".*\\.json\\'" . json-ts-mode)
   (".*\\.rs\\'" . rust-ts-mode)
-  (".*\\.py\\'" . python-ts-mode)))
+  (".*\\.py\\'" . python-ts-mode)
+	(".*\\.ex\\'" . elixir-ts-mode)))
 
 (use-package
  treesit-auto
@@ -33,10 +34,16 @@
  :elpaca nil
  ;; register all languages where the we want lsp services
  :hook
- ((typescript-ts-base-mode python-ts-mode rust-ts-mode)
+ ((typescript-ts-base-mode python-ts-mode rust-ts-mode elixir-ts-mode)
   .
   eglot-ensure)
- :config (setq eglot-confirm-server-initiated-edits nil)
+ :init
+
+ :config
+
+ ;; language server setup
+ (add-to-list 'eglot-server-programs '(elixir-ts-mode "elixir-ls"))
+ (setq eglot-confirm-server-initiated-edits nil)
  (my/code-map
   "c"
   #'comment-region
