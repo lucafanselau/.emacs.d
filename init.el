@@ -170,7 +170,6 @@
 
 (elpaca-wait)
 
-
 ;; after that some last settings
 (general-define-key
  :keymaps 'meow-normal-state-keymap "/" my/search-map)

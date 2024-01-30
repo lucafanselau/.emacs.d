@@ -88,9 +88,14 @@
     '("'" . repeat)
     '("C-d" . meow-page-down)
     '("C-u" . meow-page-up)
-    '("<escape>" . ignore)))
+    '("<escape>" . ignore)
+
+    ;; 3rd party bindings
+    '("S" . embrace-commander)))
 
  (require 'meow) (meow-setup) (meow-global-mode 1))
+
+
 
 (defun my/meow-define-keys (state mode &rest keybinds)
   "Wrapper around meow-define-keys which only defines a keybind for a specific mode"
@@ -168,5 +173,26 @@
 ;;  ;; any key that calls Puni commands, it's loaded.
 ;;  (puni-global-mode)
 ;;  (add-hook 'term-mode-hook #'puni-disable-puni-mode))
+
+(use-package
+ embrace
+ :elpaca (:type git :host github :repo "cute-jumper/embrace.el")
+ :bind (("C-M-s-#" . embrace-commander))
+ :config
+
+ (defun embrace-jsx-mode-hook ()
+   (embrace-add-pair ?c "{/*" "*/}")
+   (print "hello"))
+ (add-hook 'tsx-ts-mode-hook 'embrace-jsx-mode-hook)
+ ;; (add-hook 'org-mode-hook 'embrace-org-mode-hook)
+ ;; (defun embrace-markdown-mode-hook ()
+ ;;   (dolist (lst '((?* "*" . "*")
+ ;;                  (?\ "\\" . "\\")
+ ;;                  (?$ "$" . "$")
+ ;;                  (?/ "/" . "/")))
+ ;;     (embrace-add-pair (car lst) (cadr lst) (cddr lst))))
+ ;; (add-hook 'markdown-mode-hook 'embrace-markdown-mode-hook)
+ )
+
 
 (provide 'keys)
