@@ -2,6 +2,7 @@
 (use-package
  meow
  :demand t
+ :ensure t
  :config
  (defun meow-setup ()
    (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
@@ -105,6 +106,49 @@
                    (key-binding ,key)))))
             modified-keybinds))
     (apply 'meow-define-keys state modified-keybinds)))
+
+
+(elpaca-wait)
+
+
+(use-package
+ embrace
+ :elpaca (:type git :host github :repo "cute-jumper/embrace.el")
+ :bind (("C-M-s-#" . embrace-commander))
+ :config (add-hook 'org-mode-hook 'embrace-org-mode-hook)
+ (defun embrace-markdown-mode-hook ()
+   (dolist (lst
+            '((?* "*" . "*")
+              (?\  "\\" . "\\")
+              (?$ "$" . "$")
+              (?/ "/" . "/")))
+     (embrace-add-pair (car lst) (cadr lst) (cddr lst))))
+ (add-hook 'markdown-mode-hook 'embrace-markdown-mode-hook))
+
+(meow-normal-define-key '("S" . embrace-commander))
+
+
+(use-package
+ better-jumper
+ :config
+
+ ; this is the key here. This advice makes it so you only set a jump point
+ ; if you move more than one line with whatever command you call. For example
+ ; if you add this advice around evil-next-line, you will set a jump point
+ ; if you do 10 j, but not if you just hit j. I did not write this code, I 
+ ; I found it a while back and updated it to work with better-jumper.
+ (defun my/jump-advice (oldfun &rest args)
+   (let ((old-pos (point)))
+     (apply oldfun args)
+     (when (> (abs
+               (- (line-number-at-pos old-pos)
+                  (line-number-at-pos (point))))
+              1)
+       (better-jumper-set-jump old-pos))))
+
+
+ ;; todo: add all this
+ )
 
 ;; (use-package paredit :hook (prog-mode . enable-paredit-mode))
 

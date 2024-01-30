@@ -3,6 +3,7 @@
 (setq user-full-name "Luca Fanselau")
 (setq user-mail-address "luca.fanselau@outlook.com")
 
+
 (setq mac-right-option-modifier 'meta)
 (setq mac-option-modifier 'meta)
 
@@ -49,6 +50,14 @@
  :init
  (when (memq window-system '(mac ns x))
    (exec-path-from-shell-initialize)))
+
+(savehist-mode 1)
+(setq history-length 2000)
+
+(recentf-mode 1)
+
+;; performance optimization
+(setq read-process-output-max (* 4 1024 1024)) ;; 4mb
 
 (provide 'basics)
 ;;; my-basics ends here

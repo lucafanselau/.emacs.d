@@ -1,12 +1,26 @@
+(use-package seq :ensure t)
+
+(use-package
+ compat
+ ;; set this to use the gnu version of compat
+ :elpaca (:host github :repo "emacs-compat/compat" :files ("*.el"))
+ :ensure t)
+
+(elpaca-wait)
+
+(use-package transient)
 
 (use-package
  magit
- :init (my/open-map "g" :wk "magit" #'magit-status)
+ :after (transient)
+ :init
  (my/meow-define-keys
   'motion
   'magit-status-mode
   '("K" . meow-prev-expand)
   '("J" . meow-next-expand)))
+
+(my/open-map "g" :wk "magit" #'magit-status)
 
 (use-package
  emojify

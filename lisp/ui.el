@@ -19,9 +19,11 @@
 (use-package
  display-line-numbers
  :elpaca nil
- :init
- (setq display-line-numbers-type t)
- (global-display-line-numbers-mode))
+ :hook
+;; create 
+ (prog-mode . display-line-numbers-mode)
+ (text-mode . display-line-numbers-mode)
+ :init (setq display-line-numbers-type 'relative))
 
 ;; (use-package whitespace
 ;; :elpaca nil
@@ -92,10 +94,11 @@ if they are side window.")
  frame-cmds
  :demand t
  :elpaca (:host github :repo "emacsmirror/frame-cmds"))
-(use-package
- zoom-frm.el
- :demand t
- :init (my/frame-map "z" 'zoom-in "Z" 'zoom-out)
- :elpaca (:host "github" :repo "emacsmirror/zoom-frm"))
+;; (use-package
+;;  zoom-frm.el
+;;  :demand t
+;;  :init (my/frame-map "z" 'zoom-in "Z" 'zoom-out)
+;;  :elpaca nil ;; (:host "github" :repo "emacsmirror/zoom-frm")
+;;  )
 
 (provide 'ui)

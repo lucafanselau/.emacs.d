@@ -19,7 +19,10 @@
   "/"
   'consult-ripgrep
   ":"
-  'execute-extended-command))
+  'execute-extended-command)
+ :config
+ (setq project-rootfile-list
+       (list "package.json" "CMakeLists.txt" "Pipfile" ".project")))
 
 
 ;; File map
@@ -28,10 +31,16 @@
  :prefix "C-c f"
  :prefix-map 'my/file-map)
 
+(general-create-definer
+ my/notes-map
+ :prefix "C-c n"
+ :prefix-map 'my/notes-map)
+
 (my/file-map
  "s" 'save-buffer "f" 'project-find-file
+
  ;; TODO Do more of this
- "r" 'rename-visited-file)
+ "h" 'consult-recent-file "r" 'rename-visited-file)
 
 ;; Window map
 (general-create-definer
@@ -52,12 +61,14 @@
  'winner-undo
  "r"
  'winner-redo
- "W"
- 'other-window)
+ "w"
+ 'other-window
+ "m"
+ 'switch-to-minibuffer)
 
 (use-package
  ace-window
- :init (setq aw-dispatch-always t) (my/window-map "w" 'ace-window))
+ :init (setq aw-dispatch-always t) (my/window-map "W" 'ace-window))
 
 ;; Frame map
 (general-create-definer
@@ -97,7 +108,11 @@
  (my/search-map
   "/" 'avy-goto-char-timer "f" 'avy-goto-char "s" 'avy-goto-char-2))
 
-(use-package avy-zap :init (my/search-map "z" 'avy-zap-to-char))
+(use-package
+ avy-zap
+ :init (meow-define-keys 'normal '("Z" . avy-zap-to-char))
+
+ (my/search-map "z" 'avy-zap-to-char))
 
 
 (provide 'manager)

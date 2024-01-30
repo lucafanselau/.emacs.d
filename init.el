@@ -7,7 +7,7 @@
 ;; font config
 (cond
  ((font-exists-p "MonoLisa")
-  (set-frame-font "MonoLisa:spacing=100:size=18:weight=bold" nil t))
+  (set-frame-font "MonoLisa:spacing=100:size=13" nil t))
 
  ((font-exists-p "Cascadia Mono")
   (set-face-attribute 'default nil :font "Cascadia Code" :height 160))
@@ -165,6 +165,8 @@
 (require 'fwm)
 (require 'undo)
 (require 'jupyter)
+(require 'notes)
+(require 'templates)
 
 (elpaca-wait)
 
@@ -178,7 +180,7 @@
  4 nil
  (lambda ()
    "Clean up gc."
-   (setq gc-cons-threshold 67108864) ; 64M
+   (setq gc-cons-threshold (* 128 1024 1024)) ; 128mb
    (setq gc-cons-percentage 0.1) ; original value
    (garbage-collect)))
 

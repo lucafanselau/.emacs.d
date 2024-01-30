@@ -36,7 +36,9 @@
  ((typescript-ts-base-mode python-ts-mode rust-ts-mode)
   .
   eglot-ensure)
- :config (setq eglot-confirm-server-initiated-edits nil)
+ :config
+ (setq eglot-events-buffer-size 0)
+ (setq eglot-confirm-server-initiated-edits nil)
  (my/code-map
   "c"
   #'comment-region

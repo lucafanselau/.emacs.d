@@ -1,7 +1,11 @@
 
 ;; (use-package atom-one-dark-theme :ensure t)
 
-(use-package one-themes :init (load-theme 'one-dark t))
+(use-package
+ one-themes
+ :init (load-theme 'one-dark t)
+
+ :config (setq emacs-one-scale-org-headlines nil))
 
 (use-package
  doom-themes
@@ -22,7 +26,8 @@
  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
  (doom-themes-treemacs-config)
  ;; Corrects (and improves) org-mode's native fontification.
- (doom-themes-org-config))
+ ;; (doom-themes-org-config)
+ )
 
 (use-package
  ligature

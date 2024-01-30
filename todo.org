@@ -1,0 +1,7 @@
+* TODO fix up pipenv and have that loading correctly
+* TODO inline python scripts
+* TODO inline elisp scripts
+* TODO better copilot shortcuts
+* TODO better templates
+* TODO Jumping
+

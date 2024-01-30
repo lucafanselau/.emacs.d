@@ -9,6 +9,12 @@
 (use-package f :ensure t :demand t)
 (use-package deferred :demand t)
 
+(use-package
+ ansi-color
+ :ensure t
+ :elpaca nil
+ :hook (compilation-filter . ansi-color-compilation-filter))
+
 (elpaca-wait)
 
 (general-create-definer
